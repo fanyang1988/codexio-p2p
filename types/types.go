@@ -5,9 +5,9 @@ import (
 	"io"
 	"time"
 
+	eos "github.com/codexnetwork/codexio-go"
+	"github.com/codexnetwork/codexio-go/ecc"
 	"github.com/pkg/errors"
-	eos "github.com/eoscanada/eos-go"
-	"github.com/eoscanada/eos-go/ecc"
 	"go.uber.org/zap/zapcore"
 )
 
