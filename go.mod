@@ -1,4 +1,4 @@
-module github.com/eosforce/eos-p2p
+module github.com/fanyang1988/codexio-p2p
 
 go 1.12
 
