@@ -3,7 +3,7 @@ module github.com/fanyang1988/codexio-p2p
 go 1.12
 
 require (
-	github.com/eoscanada/eos-go v0.8.16
+	github.com/codexnetwork/codexio-go v0.0.0-20190605130555-8736625b1b85
 	github.com/pkg/errors v0.8.1
 	github.com/tidwall/gjson v1.3.5 // indirect
 	github.com/tidwall/sjson v1.0.4 // indirect
