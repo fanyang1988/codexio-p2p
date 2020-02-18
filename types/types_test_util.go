@@ -3,8 +3,8 @@ package types
 import (
 	"time"
 
-	eos "github.com/eoscanada/eos-go"
-	"github.com/eoscanada/eos-go/ecc"
+	eos "github.com/codexnetwork/codexio-go"
+	"github.com/codexnetwork/codexio-go/ecc"
 )
 
 func newBlockForTest(num uint32) *SignedBlock {

@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	eos "github.com/eoscanada/eos-go"
+	eos "github.com/codexnetwork/codexio-go"
 )
 
 // TestBlockJSON test block to json is not change data
