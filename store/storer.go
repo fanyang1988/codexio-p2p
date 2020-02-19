@@ -9,4 +9,6 @@ type BlockStorer interface {
 	CommitBlock(blk *types.SignedBlock) error
 	State() BlockDBState
 	GetBlockByNum(blockNum uint32) (*types.SignedBlock, bool)
+	Close()
+	Wait()
 }

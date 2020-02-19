@@ -16,6 +16,7 @@ import (
 var peer = flag.String("peer", "", "peer to connect to")
 var chainID = flag.String("chain-id", "76eab2b704733e933d0e4eb6cc24d260d9fbbe5d93d760392e97398f4e301448", "net chainID to connect to")
 var showLog = flag.Bool("v", true, "show detail log")
+var useStorer = flag.Bool("d", false, "use storer by bolt")
 
 // waitClose wait for term signal, then stop the server
 func waitClose() {
@@ -64,10 +65,17 @@ func main() {
 		}
 	}
 
-	storer, err := store.NewBBoltStorer(logger, *chainID, "./blocks.db", false)
-	if err != nil {
-		logger.Error("new storer error", zap.Error(err))
-		return
+	var storer store.BlockStorer
+	var err error
+
+	if *useStorer {
+		storer, err = store.NewBBoltStorer(logger, *chainID, "./blocks.db", false)
+		if err != nil {
+			logger.Error("new storer error", zap.Error(err))
+			return
+		}
+	} else {
+		storer, err = store.NewNilStorer(logger, *chainID)
 	}
 
 	client, err := p2p.NewClient(

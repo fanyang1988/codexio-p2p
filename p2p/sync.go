@@ -165,6 +165,10 @@ func (h *syncIrreversibleHandler) OnSignedBlock(peer *Peer, msg *SignedBlock) er
 	}
 
 	if h.originHeadBlock <= blockNum {
+		h.cli.logger.Info("finish sync",
+			zap.String("peer", peer.Address),
+			zap.Uint32("originHeadBlock", h.originHeadBlock),
+			zap.Uint32("blockNum", blockNum))
 		// now block have got all
 		h.cli.syncSuccessNotice(peer)
 		return nil
